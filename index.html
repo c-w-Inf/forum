@@ -11,6 +11,25 @@
     <div class="container-lg px-3 my-5 markdown-body">
       <h1><a href="https://c-w-inf.github.io/forum/">自由论坛</a></h1>
       <p>注意：网站正在开发中</p>
+      <p>--------测试部分--------</p>
+      <textarea id="tex" cols="220" rows="45"></textarea>
+    	<input type="file" onchange="upload(this)"/>
+      
     </div>
   </body>
+  <script>
+    function read(){
+      if(window.FileReader){
+        var file = input.files[0];
+        var reader = new FileReader();
+        reader.onload = function() {
+          document.getElementById("tex").innerHTML=this.result;
+        }
+        reader.readAsText(file);
+      }
+      else {
+        alert('error');
+      }
+    }
+  </script>
 </html>
